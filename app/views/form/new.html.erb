@@ -1,31 +1,41 @@
-<h1>Form</h1>
+<h1>paunocudofredkkktrolei</h1>
 <p>Por favor, seja sincero com as respostas, e responda este formulário apenas uma vez</p>
 <p>Please, be sincere in your answers, and answer this form only once</p>
 
-<%= form_tag('/questions#create') do %>
+<%= link_to "link pra lista de participantes", participantes_path %>
+<br>
+<br>
+<br>
+<br>
+
+<%= form_tag('humans#create') do %>
     <%= label_tag(:name, "Seu nome / Your name") %>
     <br>
     <%= text_field_tag(:name) %>
+    <br>
     <br>
     <%= label_tag(:country, "Seu país / Your country") %>
     <br>
     <%= text_field_tag(:country) %>
     <br>
+    <br>
 
     <%= label_tag(:knowledge, "Possui conhecimento musical? / Do you have musical knowledge?") %>
     <br>
-    <%= radio_button_tag(:knowledge, "yes") %>
+    <%= radio_button_tag(:knowledge, true) %>
     <%= label_tag(:knowledge_yes, "Sim / Yes") %>
-    <%= radio_button_tag(:knowledge, "no") %>
+    <%= radio_button_tag(:knowledge, false) %>
     <%= label_tag(:knowledge_no, "Não / No") %>
+    <br>
     <br>
 
     <%= label_tag(:skill, "Toca algum instrumento? / Do you play any instrument?") %>
     <br>
-    <%= radio_button_tag(:skill, "yes") %>
+    <%= radio_button_tag(:skill, true) %>
     <%= label_tag(:skill_yes, "Sim / Yes") %>
-    <%= radio_button_tag(:skill, "no") %>
+    <%= radio_button_tag(:skill, false) %>
     <%= label_tag(:skill_no, "Não / No") %>
+    <br>
     <br>
     <%= submit_tag("enviar") %>
 <% end %>
