@@ -24,7 +24,7 @@ class HumansController < ApplicationController
             @human.save
             redirect_to goodbyescreen_path
         else
-            render plain: "erro, algum campo não foi preenchido corretamente"
+            redirect_to errorscreen_path
         end
   end
 end

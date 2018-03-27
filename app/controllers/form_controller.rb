@@ -5,4 +5,7 @@ class FormController < ApplicationController
 
 	def goodbyescreen
 	end
+
+	def errorscreen
+	end
 end
