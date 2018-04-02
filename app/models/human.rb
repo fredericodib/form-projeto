@@ -1,3 +1,5 @@
 class Human < ApplicationRecord
-    validates_uniqueness_of :name
+    validates :name, uniqueness: true
+    validates :name, :country, presence: true
+    validates :skill, :knowledge, inclusion: { in: [ true, false ] }
 end

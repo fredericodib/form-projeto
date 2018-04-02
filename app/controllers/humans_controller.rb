@@ -1,30 +1,22 @@
 class HumansController < ApplicationController
-  
-  def index
-    @human_list = Human.all
-  end
-  
+    
   def new
+    @human = Human.new
   end
 
   def create
-    @human = Human.new
-        @human.name = params[:name]
-        @human.country = params[:country]
-        @human.knowledge = params[:knowledge]
-        @human.skill = params[:skill]
+    @human = Human.new(human_parms)
 
-        if ((@human.knowledge != true) && (@human.knowledge != false))
-          @human.knowledge = false
-        end
-        if ((@human.skill != true) && (@human.skill != false))
-          @human.skill = false
-        end
-        if @human.name != "" && @human.country != ""
-            @human.save
-            redirect_to goodbyescreen_path
-        else
-            redirect_to errorscreen_path
-        end
+    if @human.save
+      redirect_to root_path, notice: "Formulario respondido com sucesso!"
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def human_parms
+    params.require(:human).permit(:name, :country, :knowledge, :skill)
   end
 end

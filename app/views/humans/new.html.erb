@@ -1,2 +1,47 @@
-<h1>Humans#new</h1>
-<p>Find me in app/views/humans/new.html.erb</p>
+<h1>paunocudofredkkktrolei</h1>
+<p>Por favor, seja sincero com as respostas, e responda este formulário apenas uma vez</p>
+<p>Please, be sincere in your answers, and answer this form only once</p>
+
+<br>
+
+<%= form_for(@human, url: humans_path) do |f| %>
+	
+	<% if(@human.errors.any?) %>
+		<% @human.errors.full_messages.each do |m| %>
+			<span><%= m %></span>
+			<br>
+		<% end %>
+	<% end %>
+    <%= f.label(:name, "Seu nome / Your name") %>
+    <br>
+    <%= f.text_field(:name) %>
+    <br>
+    <br>
+    <%= f.label(:country, "Seu país / Your country") %>
+    <br>
+    <%= f.text_field(:country) %>
+    <br>
+    <br>
+
+    <p>Possui conhecimento musical? / Do you have musical knowledge?</p>
+    <br>
+    <%= f.radio_button :knowledge, true %> 
+    <%= f.label :knowledge_true, "Sim/Yes" %> 
+	<br>
+    <%= f.radio_button :knowledge, false %> 
+    <%= f.label :knowledge_false, "Não/No" %> 
+
+    <br>
+    <br>
+
+    <p>Toca algum instrumento? / Do you play any instrument?</p>
+    <br>
+    <%= f.radio_button :skill, true %> 
+    <%= f.label :skill_true, "Sim/Yes" %> 
+	<br>
+    <%= f.radio_button :skill, false %> 
+    <%= f.label :skill_false, "Não/No" %> 
+    <br>
+    <br>
+    <%= f.submit("enviar") %>
+<% end %>
