@@ -8,7 +8,7 @@ class HumansController < ApplicationController
     @human = Human.new(human_parms)
 
     if @human.save
-      redirect_to root_path, notice: "Formulario respondido com sucesso!"
+      redirect_to unauthenticated_root_path, notice: "Formulario respondido com sucesso!"
     else
       render :new
     end
