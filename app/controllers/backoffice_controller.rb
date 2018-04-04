@@ -4,7 +4,7 @@ class BackofficeController < ApplicationController
 
 	def index
 		@humans = Human.all
-		@humans = Human.page(params[:page]).per(2)
+		@humans = Human.page(params[:page]).per(10)
 	end
 	
 end
