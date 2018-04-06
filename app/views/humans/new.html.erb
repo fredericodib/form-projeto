@@ -1,47 +1,77 @@
-<h1>paunocudofredkkktrolei</h1>
-<p>Por favor, seja sincero com as respostas, e responda este formulário apenas uma vez</p>
-<p>Please, be sincere in your answers, and answer this form only once</p>
+<div class = "content">
 
-<br>
+    <div id="lang-icons">
+        <%= link_to (image_tag "brazil.png" , :alt => "pt" , :title => "português"), "#" %>
+        <%= link_to (image_tag "usa.png" , :alt => "en", :title => "english" ), "#" %>
+    </div>
 
-<%= form_for(@human, url: humans_path) do |f| %>
+    <h1><%= @titulo %></h1>
+    <p class = "inicial_text"><%= @inicial_text %></p>
+
+    <%= image_tag "logo.png" , :alt => "logo" , :title => "logo" , :id => "logo"%>
+
+    <hr/>
+
+
+    <%= form_for(@human, url: humans_path) do |f| %>
 	
-	<% if(@human.errors.any?) %>
-		<% @human.errors.full_messages.each do |m| %>
-			<span><%= m %></span>
-			<br>
-		<% end %>
-	<% end %>
-    <%= f.label(:name, "Seu nome / Your name") %>
-    <br>
-    <%= f.text_field(:name) %>
-    <br>
-    <br>
-    <%= f.label(:country, "Seu país / Your country") %>
-    <br>
-    <%= f.text_field(:country) %>
-    <br>
+    <% if(@human.errors.any?) %>
+        <div class="alert alert-danger">
+            <% @human.errors.full_messages.each do |m| %>
+                    <span><%= m %></span>
+                <br>
+            <% end %>
+        </div>
+    <% end %>
+
+    <% if success %>
+      <p class="alert alert-success"><%= success %></p>
+    <% end %>
+    <% if danger %>
+      <p class="alert alert-danger"><%= danger %></p>
+    <% end %>
+    
+    <div id="huge-box">
+        <div id="little-box1"  class = "form-group">
+            <%= f.label(:name, @seu_nome) %>
+            <br>
+            <%= f.text_field(:name, :class => "form-control") %>
+        </div>
+        
+        <div id="little-box2" class = "form-group">
+            <%= f.label(:country, @seu_pais) %>
+            <br>
+            <%= f.text_field(:country, :class => "form-control") %>
+        </div>
+    </div>
     <br>
 
-    <p>Possui conhecimento musical? / Do you have musical knowledge?</p>
-    <br>
-    <%= f.radio_button :knowledge, true %> 
-    <%= f.label :knowledge_true, "Sim/Yes" %> 
-	<br>
-    <%= f.radio_button :knowledge, false %> 
-    <%= f.label :knowledge_false, "Não/No" %> 
+    <hr/>
 
-    <br>
-    <br>
+    <div class = "question-text">
+        <p><%= @seu_conhecimento %></p>
+        <%= f.radio_button :knowledge, true %> 
+        <%= f.label :knowledge_true, @sim %> 
+        &nbsp &nbsp &nbsp
+        <%= f.radio_button :knowledge, false %> 
+        <%= f.label :knowledge_false, @nao %> 
+    </div>
 
-    <p>Toca algum instrumento? / Do you play any instrument?</p>
+    <hr/>
+
+    <div class = "question-text">
+        <p><%= @tocaOUNtoca %></p>
+        <%= f.radio_button :skill, true %> 
+        <%= f.label :skill_true, @sim %> 
+        &nbsp &nbsp &nbsp
+        <%= f.radio_button :skill, false %> 
+        <%= f.label :skill_false, @nao %> 
+    </div>
+
+    <hr/>
+
+    <%= f.submit(@enviar, :id => 'submit-buttom', :class => "btn btn-primary btn-lg btn-block") %>
     <br>
-    <%= f.radio_button :skill, true %> 
-    <%= f.label :skill_true, "Sim/Yes" %> 
-	<br>
-    <%= f.radio_button :skill, false %> 
-    <%= f.label :skill_false, "Não/No" %> 
-    <br>
-    <br>
-    <%= f.submit("enviar") %>
+    </div>
 <% end %>
+
