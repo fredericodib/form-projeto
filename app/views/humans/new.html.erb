@@ -13,7 +13,7 @@
     <hr/>
 
 
-    <%= form_for(@human, url: humans_path) do |f| %>
+    <!--<%= form_for(@human, url: humans_path) do |f| %>
 	
     <% if(@human.errors.any?) %>
         <div class="alert alert-danger">
@@ -23,6 +23,7 @@
             <% end %>
         </div>
     <% end %>
+    -->
 
     <% if success %>
       <p class="alert alert-success"><%= success %></p>
@@ -30,7 +31,7 @@
     <% if danger %>
       <p class="alert alert-danger"><%= danger %></p>
     <% end %>
-    
+
     <div id="huge-box">
         <div id="little-box1"  class = "form-group">
             <%= f.label(:name, @seu_nome) %>
