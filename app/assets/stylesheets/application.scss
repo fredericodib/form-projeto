@@ -1,9 +1,8 @@
 @import "bootstrap";
 
 body {
-	background-image: url("background1.jpg");
-	background-size: 100%;
-	background-repeat: repeat-y;
+	background-color:rgb(255, 255, 255);
+	background-repeat: repeat;
 }
 
 .field_with_errors {
@@ -11,12 +10,10 @@ body {
 }
 
 .content {
-	color: rgb(28, 99, 0);
+	color: rgb(0, 0, 0);
+	border: solid 1px black;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	border: solid darkblue 2px;
-	box-shadow: 2px 5px 5px;
-	background-color: rgb(240, 243, 71);
-	margin: 0 20%;
+	background-size: 100%;
 }
 #logo {
 	width: 100%;
@@ -35,13 +32,16 @@ h1 {
 	padding: 0 5px;
 }
 #lang-icons img {
-	height: 15px;
-	width: 15px;
+	height: 16px;
+	width: 16px;
 }
 
 hr {
+	border-bottom: solid 1px black;
 	width: 100%;
 }
+
+
 
 
 
@@ -62,6 +62,75 @@ hr {
 
 .question-text {
 	margin: 1% 5%;
+}
+
+
+
+
+
+
+
+#audio-box {
+	border: solid 1px black;
+	margin: 5%;
+	width: 90%;
+	height: auto;
+	background-color: rgb(255, 255, 255);
+	text-align: center;
+}
+
+.audio-boxes1 {
+	margin: 5px 5%;
+	width: 100px;
+	height: 100px;
+	border-radius: 30px;
+	border: solid 5px rgb(0, 0, 0);
+	display: inline-block;
+	background-color: yellow;
+}
+.audio-boxes2 {
+	margin: 5px 5%;
+	width: 100px;
+	height: 100px;
+	border-radius: 30px;
+	border: solid 5px rgb(0, 0, 0);
+	display: inline-block;
+	background-color: rgb(52, 209, 4);
+}
+.audio-boxes3 {
+	margin: 5px 5%;
+	width: 100px;
+	height: 100px;
+	border-radius: 30px;
+	border: solid 5px rgb(0, 0, 0);
+	display: inline-block;
+	background-color: rgb(3, 20, 173);
+}
+.audio-boxes4 {
+	margin: 5px 5%;
+	width: 100px;
+	height: 100px;
+	border-radius: 30px;
+	border: solid 5px rgb(0, 0, 0);
+	display: inline-block;
+	background-color: rgb(83, 83, 83);
+}
+
+
+
+
+
+
+
+.audio-boxes1 img, .audio-boxes2 img, .audio-boxes3 img, .audio-boxes4 img {
+	position: relative;
+	top: 15px;
+	left: 5px;
+	width: 64px;
+	height: 64px;
+}
+.audio-boxes1:hover, .audio-boxes2:hover, .audio-boxes3:hover, .audio-boxes4:hover {
+	background-color: rgb(255, 255, 255);
 }
 
 #submit-buttom {

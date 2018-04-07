@@ -3,7 +3,7 @@ class HumansController < ApplicationController
   def new
     @language = 0
 
-  
+
 
     if @language == 0
       @titulo = "Pesquisa Musical"
@@ -14,6 +14,7 @@ class HumansController < ApplicationController
       @sim = "sim"
       @nao = "não"
       @tocaOUNtoca = "você toca algum instrumento?"
+      @reordena = "ordene os fragmentos abaixo como desejar.";
       @enviar = "enviar"
     elsif @language == 1
       @titulo = "Musical Research"
@@ -24,6 +25,7 @@ class HumansController < ApplicationController
       @sim = "yes"
       @nao = "no"
       @tocaOUNtoca = "do you play any instrument?"
+      @reordena = "sort the audio frags below as you wish.";
       @enviar = "submit"
     end
   
