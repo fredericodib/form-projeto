@@ -38,7 +38,7 @@ class HumansController < ApplicationController
     if @human.save
       redirect_to unauthenticated_root_path, notice: "Formulario respondido com sucesso!"
     else
-      redirect_to root_path, danger: "Por favor, preencha todos os campos"
+      redirect_to unauthenticated_root_path, danger: "Por favor, preencha todos os campos"
     end
   end
 
