@@ -36,11 +36,7 @@ class HumansController < ApplicationController
     @human = Human.new(human_parms)
 
     if @human.save
-<<<<<<< HEAD
-      redirect_to root_path, success: "Formulario respondido com sucesso!"
-=======
       redirect_to unauthenticated_root_path, notice: "Formulario respondido com sucesso!"
->>>>>>> bafec538ac0a42f75f0683696cb0061b19612782
     else
       redirect_to root_path, danger: "Por favor, preencha todos os campos"
     end
