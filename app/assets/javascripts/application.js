@@ -15,3 +15,7 @@
 //= require popper
 //= require bootstrap
 //= require_tree .
+
+function playSound (id) {
+    document.getElementById(id).play();
+}

@@ -1,47 +1,224 @@
-<h1>paunocudofredkkktrolei</h1>
-<p>Por favor, seja sincero com as respostas, e responda este formulário apenas uma vez</p>
-<p>Please, be sincere in your answers, and answer this form only once</p>
+<div class = "content">
 
-<br>
+    <div id="lang-icons">
+        <%= link_to (image_tag "brazil.png" , :alt => "pt" , :title => "português"), "" %>
+        <%= link_to (image_tag "usa.png" , :alt => "en", :title => "english" ), "" %>
+    </div>
 
-<%= form_for(@human, url: humans_path) do |f| %>
+    <h1><%= @titulo %></h1>
+    <p class = "inicial_text"><%= @inicial_text %></p>
+
+    <%= image_tag "logo.png" , :alt => "logo" , :id => "logo"%>
+
+
+    <%= form_for(@human, url: humans_path) do |f| %>
 	
-	<% if(@human.errors.any?) %>
-		<% @human.errors.full_messages.each do |m| %>
-			<span><%= m %></span>
-			<br>
-		<% end %>
-	<% end %>
-    <%= f.label(:name, "Seu nome / Your name") %>
-    <br>
-    <%= f.text_field(:name) %>
-    <br>
-    <br>
-    <%= f.label(:country, "Seu país / Your country") %>
-    <br>
-    <%= f.text_field(:country) %>
-    <br>
+    <!--
+    <% if(@human.errors.any?) %>
+
+            <% @human.errors.full_messages.each do |m| %>
+                    <span><%= m %></span>
+                <br>
+            <% end %>
+
+    <% end %>
+    -->
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if danger %>
+      <p class="alert alert-danger"><%= danger %></p>
+    <% end %>
+    
+    <div id="huge-box">
+        <br>
+        <div id="little-box1"  class = "form-group">
+            <%= f.label(:name, @seu_nome) %>
+            <br>
+            <%= f.text_field(:name, :class => "form-control") %>
+        </div>
+        
+        <div id="little-box2" class = "form-group">
+            <%= f.label(:country, @seu_pais) %>
+            <br>
+            <%= f.text_field(:country, :class => "form-control") %>
+        </div>
+    </div>
     <br>
 
-    <p>Possui conhecimento musical? / Do you have musical knowledge?</p>
-    <br>
-    <%= f.radio_button :knowledge, true %> 
-    <%= f.label :knowledge_true, "Sim/Yes" %> 
-	<br>
-    <%= f.radio_button :knowledge, false %> 
-    <%= f.label :knowledge_false, "Não/No" %> 
+    <hr/>
 
-    <br>
-    <br>
+    <div class = "question-text">
+        <p><%= @seu_conhecimento %></p>
+        <%= f.radio_button :knowledge, true %> 
+        <%= f.label :knowledge_true, @sim %> 
+        &nbsp &nbsp &nbsp
+        <%= f.radio_button :knowledge, false %> 
+        <%= f.label :knowledge_false, @nao %> 
+    </div>
 
-    <p>Toca algum instrumento? / Do you play any instrument?</p>
+    <hr/>
+
+    <div class = "question-text">
+        <p><%= @tocaOUNtoca %></p>
+        <%= f.radio_button :skill, true %> 
+        <%= f.label :skill_true, @sim %> 
+        &nbsp &nbsp &nbsp
+        <%= f.radio_button :skill, false %> 
+        <%= f.label :skill_false, @nao %> 
+    </div>
+
+    <hr/>
+
+    <!-- Lembrete IE não suporta arquivos.wav -->
+
+    
+    <div class="question-text">
+        <p>1) <%= @reordena %></p>
+        <div id="audio-box">
+            <div class="audio-boxes1">
+                <%= audio_tag "/assets/1Heitora.wav", id: "play1" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play2')" %>
+            </div>
+            <div class="audio-boxes3">
+                <%= audio_tag "/assets/1Heitorb.wav", id: "play2" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play3')" %>
+            </div>
+            <div class="audio-boxes2">
+                <%= audio_tag "/assets/1Heitorc.wav", id: "play3" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play1')" %>
+            </div>
+            <div class="audio-boxes4">
+                <%= audio_tag "/assets/1Heitord.wav", id: "play4" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play4')" %>
+            </div>
+        </div>
+    </div>
+
+        <hr/>
+
+    <div class="question-text">
+        <p>2) <%= @reordena %></p>    
+        <div id="audio-box">
+            <div class="audio-boxes2">
+                <%= audio_tag "/assets/2Seincmana.wav", id: "play5" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play8')" %>
+            </div>
+            <div class="audio-boxes3">
+                <%= audio_tag "/assets/2Seincmanb.wav", id: "play6" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play7')" %>
+            </div>
+            <div class="audio-boxes4">
+                <%= audio_tag "/assets/2Seincmanc.wav", id: "play7" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play6')" %>
+            </div>
+            <div class="audio-boxes1">
+                <%= audio_tag "/assets/2Seincmand.wav", id: "play8" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play5')" %>
+            </div>
+        </div>
+    </div>
+
+        <hr/>
+
+    <div class="question-text">
+        <p>3) <%= @reordena %></p>
+        <div id="audio-box">
+            <div class="audio-boxes4">
+                <%= audio_tag "/assets/3Victórioa.wav", id: "play9" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play12')" %>
+            </div>
+            <div class="audio-boxes3">
+                <%= audio_tag "/assets/3Victóriob.wav", id: "play10" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play10')" %>
+            </div>
+            <div class="audio-boxes1">
+                <%= audio_tag "/assets/3Victórioc.wav", id: "play11" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play11')" %>
+            </div>
+            <div class="audio-boxes2">
+                <%= audio_tag "/assets/3Victóriod.wav", id: "play12" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play9')" %>
+            </div>
+        </div> 
+    </div>
+
+        <hr/>
+
+    <div class="question-text">
+        <p>4) <%= @reordena %></p>
+        <div id="audio-box">
+            <div class="audio-boxes2">
+                <%= audio_tag "/assets/4 Csekö a.wav", id: "play13" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play16')" %>
+            </div>
+            <div class="audio-boxes4">
+                <%= audio_tag "/assets/4 Csekö b.wav", id: "play14" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play15')" %>
+            </div>
+            <div class="audio-boxes1">
+                <%= audio_tag "/assets/4 Csekö c.wav", id: "play15" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play14')" %>
+            </div>
+            <div class="audio-boxes3">
+                <%= audio_tag "/assets/4 Csekö d.wav", id: "play16" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play13')" %>
+            </div>
+        </div>
+    </div>
+
+        <hr/>
+
+    <div class="question-text">
+        <p>5) <%= @reordena %></p>
+        <div id="audio-box">
+            <div class="audio-boxes2">
+                <%= audio_tag "/assets/5 Zampronha a.wav", id: "play17" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play18')" %>
+            </div>
+            <div class="audio-boxes1">
+                <%= audio_tag "/assets/5 Zampronha b.wav", id: "play18" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play17')" %>
+            </div>
+            <div class="audio-boxes4">
+                <%= audio_tag "/assets/5 Zampronha c.wav", id: "play19" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)" , :onclick => "playSound('play19')"%>
+            </div>
+            <div class="audio-boxes3">
+                <%= audio_tag "/assets/5 Zampronha d.wav", id: "play20" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play20')" %>
+            </div>
+        </div>    
+    </div>
+
+        <hr/>
+
+    <div class="question-text">
+        <p>6) <%= @reordena %></p>
+        <div id="audio-box">
+            <div class="audio-boxes4">
+                <%= audio_tag "/assets/6 Ferraz a.wav", id: "play21" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play23')" %>
+            </div>
+            <div class="audio-boxes3">
+                <%= audio_tag "/assets/6 Ferraz b.wav", id: "play22" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play24')" %>
+            </div>
+            <div class="audio-boxes2">
+                <%= audio_tag "/assets/6 Ferraz c.wav", id: "play23" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play21')" %>
+            </div>
+            <div class="audio-boxes1">
+                <%= audio_tag "/assets/6 Ferraz d.wav", id: "play24" %>
+                <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play22')" %>
+            </div>
+        </div>
+    </div>
+
+
+    <%= f.submit(@enviar, :id => 'submit-buttom', :class => "btn btn-primary btn-lg btn-block") %>
     <br>
-    <%= f.radio_button :skill, true %> 
-    <%= f.label :skill_true, "Sim/Yes" %> 
-	<br>
-    <%= f.radio_button :skill, false %> 
-    <%= f.label :skill_false, "Não/No" %> 
-    <br>
-    <br>
-    <%= f.submit("enviar") %>
+    </div>
 <% end %>
+
