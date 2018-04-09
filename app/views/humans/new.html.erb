@@ -15,7 +15,6 @@
 	
     <!--
     <% if(@human.errors.any?) %>
-
             <% @human.errors.full_messages.each do |m| %>
                     <span><%= m %></span>
                 <br>
@@ -42,7 +41,7 @@
         <div id="little-box2" class = "form-group">
             <%= f.label(:country, @seu_pais) %>
             <br>
-            <%= f.text_field(:country, :class => "form-control") %>
+            <%= f.country_select :country, :class => "form-control" %>
         </div>
     </div>
     <br>
