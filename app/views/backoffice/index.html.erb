@@ -1,36 +1,42 @@
 <div class="container">
 	<h1>Bem vindo Administrador!</h1>
+	<br>
+	<%=	form_tag(backoffice_path, :method => :get) do %>
+		<%= country_select nil, :search, include_blank: true %>
+		<%= submit_tag "Filtrar" , class:"btn btn-success btn-sm"%>
+	<% end %>
+	<br>
 
 	<table class="table">
 	  	<thead>
-	    <tr>
-	      <th colspan="3">Aluno:</th>
-	      <th colspan="3">País</th>
-	      <th colspan="4">Conhecimento:</th>
-	      <th colspan="4">Instrumento:</th>
-	    </tr>
+		    <tr>
+		      <th colspan="3">Aluno:</th>
+		      <th colspan="3">País</th>
+		      <th colspan="4">Conhecimento:</th>
+		      <th colspan="4">Instrumento:</th>
+		    </tr>
 	  	</thead> 	
-    	<tbody>
-        <% @humans.each do |human| %>
-        <tr>
-	        	<td colspan="3"><%= human.name %></td>
-	        	<td colspan="3"><%= human.country %></td>
-	        	<td colspan="4">
-	        		<% if human.knowledge? %>
-	        			<div>SIM</div>
-	        		<% else %>
-	        			<div>NÃO</div>
-	        		<% end %>
-	        	</td>
-	        	<td colspan="4">
-	        		<% if human.skill? %>
-	        			<div>SIM</div>
-	        		<% else %>
-	        			<div>NÃO</div>
-	        		<% end %>
-	        	</td>
-	      </tr>
-        <% end %>
+      	<tbody>
+	      <% @humans.each do |human| %>
+	        <tr>
+		        <td colspan="3"><%= human.name %></td>
+		        <td colspan="3"><%= human.country %></td>
+		        <td colspan="4">
+		        	<% if human.knowledge? %>
+		        		<div>SIM</div>
+		        	<% else %>
+		        		<div>NÃO</div>
+		        	<% end %>
+		        </td>
+		        <td colspan="4">
+		        	<% if human.skill? %>
+		        		<div>SIM</div>
+		        	<% else %>
+		        		<div>NÃO</div>
+		        	<% end %>
+		        </td>
+		    </tr>
+	      <% end %>
       </tbody>
    </table>
 	<%= paginate(@humans) %>
