@@ -39,7 +39,7 @@
 	      <% end %>
       </tbody>
    </table>
-	<%= paginate(@humans) %>
+	<%= paginate (@humans), theme: 'twitter-bootstrap-4' %>
 	<%= link_to "Sair", destroy_admin_session_path, method: 'delete', class:"btn btn-success btn-sm"%>
 
 </div>

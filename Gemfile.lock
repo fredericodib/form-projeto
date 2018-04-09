@@ -49,6 +49,9 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap4-kaminari-views (1.0.0)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.3)
     byebug (10.0.1)
     capybara (2.18.0)
@@ -109,9 +112,6 @@ GEM
     kaminari-activerecord (1.1.1)
       activerecord
       kaminari-core (= 1.1.1)
-    kaminari-bootstrap (3.0.1)
-      kaminari (>= 0.13.0)
-      rails
     kaminari-core (1.1.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -230,6 +230,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0)
+  bootstrap4-kaminari-views
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
@@ -238,7 +239,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
-  kaminari-bootstrap
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
   rails (~> 5.1.5)

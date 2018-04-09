@@ -24,7 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 gem 'kaminari'
-gem 'kaminari-bootstrap'
+gem 'bootstrap4-kaminari-views'
 gem 'country_select', require: 'country_select_without_sort_alphabetical'
 
 # Use CoffeeScript for .coffee assets and views
