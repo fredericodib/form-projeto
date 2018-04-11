@@ -1,12 +1,8 @@
 <div class = "content">
 
-    <div id="lang-icons">
-        <%= link_to (image_tag "brazil.png" , :alt => "pt" , :title => "português"), "" %>
-        <%= link_to (image_tag "usa.png" , :alt => "en", :title => "english" ), "" %>
-    </div>
-
-    <h1><%= @titulo %></h1>
-    <p class = "inicial_text"><%= @inicial_text %></p>
+    <h1><%= "Pesquisa Musical | Musical Research" %></h1>
+    <p class = "inicial_text"><%= "Por favor, seja sincero com as respostas, e responda este formulário apenas uma vez" %></p>
+    <p class = "inicial_text"><%= "Please, be sincere in your answers, and answer this formulary only once" %></p>
 
     <%= image_tag "logo.png" , :alt => "logo" , :id => "logo"%>
 
@@ -33,13 +29,13 @@
     <div id="huge-box">
         <br>
         <div id="little-box1"  class = "form-group">
-            <%= f.label(:name, @seu_nome) %>
+            <%= f.label(:name, "nome | name") %>
             <br>
             <%= f.text_field(:name, :class => "form-control") %>
         </div>
         
         <div id="little-box2" class = "form-group">
-            <%= f.label(:country, @seu_pais) %>
+            <%= f.label(:country, "país | country") %>
             <br>
             <%= f.country_select :country, :class => "form-control" %>
         </div>
@@ -48,22 +44,22 @@
 
 
     <div class = "question-text">
-        <p><%= @seu_conhecimento %></p>
+        <p><%= "possui algum conhecimento musical? | do you have any musical background?" %></p>
         <%= f.radio_button :knowledge, true %> 
-        <%= f.label :knowledge_true, @sim %> 
+        <%= f.label :knowledge_true, "sim | yes" %> 
         &nbsp &nbsp &nbsp
         <%= f.radio_button :knowledge, false %> 
-        <%= f.label :knowledge_false, @nao %> 
+        <%= f.label :knowledge_false, "não | no" %> 
     </div>
 
 
     <div class = "question-text">
-        <p><%= @tocaOUNtoca %></p>
+        <p><%= "você toca algum instrumento? | do you play any instrument?" %></p>
         <%= f.radio_button :skill, true %> 
-        <%= f.label :skill_true, @sim %> 
+        <%= f.label :skill_true, "sim | yes" %> 
         &nbsp &nbsp &nbsp
         <%= f.radio_button :skill, false %> 
-        <%= f.label :skill_false, @nao %> 
+        <%= f.label :skill_false, "não | no" %> 
     </div>
 
 
@@ -71,7 +67,7 @@
 
     
     <div class="question-text">
-        <p>1) <%= @reordena %></p>
+        <p>1) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
         <div id="audio-box">
             <div class="audio-boxes1">
                 <%= audio_tag "/assets/1Heitora.wav", id: "play1" %>
@@ -95,7 +91,7 @@
 
 
     <div class="question-text">
-        <p>2) <%= @reordena %></p>    
+        <p>2) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>    
         <div id="audio-box">
             <div class="audio-boxes2">
                 <%= audio_tag "/assets/2Seincmana.wav", id: "play5" %>
@@ -119,7 +115,7 @@
 
 
     <div class="question-text">
-        <p>3) <%= @reordena %></p>
+        <p>3) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
         <div id="audio-box">
             <div class="audio-boxes4">
                 <%= audio_tag "/assets/3Victórioa.wav", id: "play9" %>
@@ -143,7 +139,7 @@
 
 
     <div class="question-text">
-        <p>4) <%= @reordena %></p>
+        <p>4) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
         <div id="audio-box">
             <div class="audio-boxes2">
                 <%= audio_tag "/assets/4 Csekö a.wav", id: "play13" %>
@@ -167,7 +163,7 @@
 
 
     <div class="question-text">
-        <p>5) <%= @reordena %></p>
+        <p>5) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
         <div id="audio-box">
             <div class="audio-boxes2">
                 <%= audio_tag "/assets/5 Zampronha a.wav", id: "play17" %>
@@ -191,7 +187,7 @@
 
 
     <div class="question-text">
-        <p>6) <%= @reordena %></p>
+        <p>6) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
         <div id="audio-box">
             <div class="audio-boxes4">
                 <%= audio_tag "/assets/6 Ferraz a.wav", id: "play21" %>
@@ -213,7 +209,7 @@
     </div>
 
 
-    <%= f.submit(@enviar, :id => 'submit-buttom', :class => "btn btn-primary btn-lg btn-block") %>
+    <%= f.submit("enviar | submit", :id => 'submit-buttom', :class => "btn btn-primary btn-lg btn-block") %>
     <br>
     </div>
 <% end %>
