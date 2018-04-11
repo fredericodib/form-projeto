@@ -73,54 +73,47 @@ body {
 }
 
 .audio-boxes1 {
-	margin: 5px 5%;
-	width: 100px;
-	height: 100px;
+	margin: 5px 4%;
+	width: 15%;
+	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
 	display: inline-block;
 	background-color: yellow;
 }
 .audio-boxes2 {
-	margin: 5px 5%;
-	width: 100px;
-	height: 100px;
+	margin: 5px 4%;
+	width: 15%;
+	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
 	display: inline-block;
 	background-color: rgb(52, 209, 4);
 }
 .audio-boxes3 {
-	margin: 5px 5%;
-	width: 100px;
-	height: 100px;
+	margin: 5px 4%;
+	width: 15%;
+	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
 	display: inline-block;
 	background-color: rgb(3, 20, 173);
 }
 .audio-boxes4 {
-	margin: 5px 5%;
-	width: 100px;
-	height: 100px;
+	margin: 5px 4%;
+	width: 15%;
+	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
 	display: inline-block;
 	background-color: rgb(83, 83, 83);
 }
-
-
-
-
-
-
-
 .audio-boxes1 img, .audio-boxes2 img, .audio-boxes3 img, .audio-boxes4 img {
 	position: relative;
-	top: 15px;
-	left: 5px;
-	width: 64px;
-	height: 64px;
+	top: 3%;
+	left: 1%;
+	width: 50%;
+	height: 50%;
 }
 .audio-boxes1:hover, .audio-boxes2:hover, .audio-boxes3:hover, .audio-boxes4:hover {
 	background-color: rgb(255, 255, 255);
