@@ -17,6 +17,6 @@ class HumansController < ApplicationController
   private
 
   def human_parms
-    params.require(:human).permit(:name, :country, :knowledge, :skill)
+    params.require(:human).permit(:name, :country, :knowledge, :skill, :q1, :q2, :q3, :q4, :q5, :q6)
   end
 end

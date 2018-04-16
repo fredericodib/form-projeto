@@ -26,6 +26,8 @@ gem 'devise'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'country_select', require: 'country_select_without_sort_alphabetical'
+gem 'jquery-ui-rails'
+gem 'touchpunch-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

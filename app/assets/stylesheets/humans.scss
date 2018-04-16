@@ -8,8 +8,7 @@ body {
 }
 
 .backoffice-container {
-	width: 80%;
-	margin: 2em auto;
+	margin: 2em 0;
 }
 
 .login{
@@ -61,60 +60,68 @@ body {
 
 
 
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
 
 
-#audio-box {
+.audio-box {
 	border: solid 1px black;
 	margin: 5%;
 	width: 90%;
 	height: auto;
 	background-color: rgb(255, 255, 255);
 	text-align: center;
+	@include clearfix;
+}
+
+.audio-boxes {
+	margin: 5px 5%;
+	width: 15%;
+	float: left;
 }
 
 .audio-boxes1 {
-	margin: 5px 4%;
-	width: 15%;
-	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
-	display: inline-block;
 	background-color: yellow;
 }
 .audio-boxes2 {
-	margin: 5px 4%;
-	width: 15%;
-	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
-	display: inline-block;
 	background-color: rgb(52, 209, 4);
 }
 .audio-boxes3 {
-	margin: 5px 4%;
-	width: 15%;
-	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
-	display: inline-block;
 	background-color: rgb(3, 20, 173);
 }
 .audio-boxes4 {
-	margin: 5px 4%;
-	width: 15%;
-	height: 22%;
 	border-radius: 30px;
 	border: solid 5px rgb(0, 0, 0);
-	display: inline-block;
 	background-color: rgb(83, 83, 83);
 }
 .audio-boxes1 img, .audio-boxes2 img, .audio-boxes3 img, .audio-boxes4 img {
 	position: relative;
-	top: 3%;
+	margin-top: 25%;
 	left: 1%;
 	width: 50%;
 	height: 50%;
 }
+@media (max-width: 400px) {
+	.audio-boxes1 img, .audio-boxes2 img, .audio-boxes3 img, .audio-boxes4 img {
+		position: relative;
+		margin-top: 3%;
+		left: 1%;
+		width: 50%;
+		height: 50%;
+	}
+}
+
 .audio-boxes1:hover, .audio-boxes2:hover, .audio-boxes3:hover, .audio-boxes4:hover {
 	background-color: rgb(255, 255, 255);
 }
@@ -122,4 +129,17 @@ body {
 #submit-buttom {
 	display: block;
 	margin: 0 auto;
+}
+
+.move {
+	margin-top: 0.5em;
+	padding: 0.5em;
+	width: 100%;
+	background-color: #ddd;
+}
+@media (max-width: 400px) {
+	.move {
+		background-color: #fff;
+		padding: 0;
+	}
 }

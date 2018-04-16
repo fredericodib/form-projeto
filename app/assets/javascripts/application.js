@@ -14,8 +14,25 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-//= require_tree .
+//= require jquery-ui
+//= require jquery-ui/widget
+//= require jquery-ui/widgets/mouse
+//= require touchpunch
+
+w = $( ".audio-boxes1" ).width();
+$( ".audio-boxes1" ).height(w);
+$( ".audio-boxes2" ).height(w);
+$( ".audio-boxes3" ).height(w);
+$( ".audio-boxes4" ).height(w);
 
 function playSound (id) {
     document.getElementById(id).play();
 }
+
+
+$( function() {
+    $( ".sortable" ).sortable({
+    	handle: ".move",
+	  	stop: function( event, ui ) {console.log(this)}
+	});
+} );
