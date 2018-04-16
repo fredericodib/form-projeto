@@ -1,3 +1,58 @@
-<h1>Bem vindo Administrador!</h1>
+<div class="backoffice-container">
+	<h1>Bem vindo Administrador!</h1>
+	<br>
+	<%=	form_tag(backoffice_path, :method => :get) do %>
+		<%= country_select nil, :search, include_blank: true %>
+		<%= submit_tag "Filtrar" , class:"btn btn-success btn-sm"%>
+	<% end %>
+	<br>
 
-<%= link_to "Sait", destroy_admin_session_path, method: 'delete', class:"btn btn-success btn-sm"%>
+	<table class="table table-responsive">
+	  	<thead>
+		    <tr>
+		      <th colspan="4">Aluno:</th>
+		      <th colspan="4">País</th>
+		      <th colspan="4">Conhecimento:</th>
+		      <th colspan="4">Instrumento:</th>
+		      <th colspan="4">Questão 1</th>
+		      <th colspan="4">Questão 2</th>
+		      <th colspan="4">Questão 3</th>
+		      <th colspan="4">Questão 4</th>
+		      <th colspan="4">Questão 5</th>
+		      <th colspan="4">Questão 6</th>
+
+		    </tr>
+	  	</thead> 	
+      	<tbody>
+	      <% @humans.each do |human| %>
+	        <tr>
+		        <td colspan="4"><%= human.name %></td>
+		        <td colspan="4"><%= human.country %></td>
+		        <td colspan="4">
+		        	<% if human.knowledge? %>
+		        		<div>SIM</div>
+		        	<% else %>
+		        		<div>NÃO</div>
+		        	<% end %>
+		        </td>
+		        <td colspan="4">
+		        	<% if human.skill? %>
+		        		<div>SIM</div>
+		        	<% else %>
+		        		<div>NÃO</div>
+		        	<% end %>
+		        </td>
+		        <td colspan="4"><%= human.q1 %></td>
+		        <td colspan="4"><%= human.q2 %></td>
+		        <td colspan="4"><%= human.q3 %></td>
+		        <td colspan="4"><%= human.q4 %></td>
+		        <td colspan="4"><%= human.q5 %></td>
+		        <td colspan="4"><%= human.q6 %></td>
+		    </tr>
+	      <% end %>
+      </tbody>
+   </table>
+	<%= paginate (@humans), theme: 'twitter-bootstrap-4' %>
+	<%= link_to "Sair", destroy_admin_session_path, method: 'delete', class:"btn btn-success btn-sm"%>
+
+</div>
