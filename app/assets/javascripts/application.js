@@ -30,9 +30,20 @@ function playSound (id) {
 }
 
 
+
+function change(target) {
+	var id = target.attributes[1].nodeValue;
+	var arr = target.children;
+	var str = "";
+	for (var i = 0; i < arr.length; i++) {
+	    str = str + arr[i].attributes[1].nodeValue + " "
+	}
+	$("#"+id)[0].defaultValue = str
+}
+
 $( function() {
     $( ".sortable" ).sortable({
     	handle: ".move",
-	  	stop: function( event, ui ) {console.log(this)}
+	  	stop: function( event, ui ) {change(event.target)}
 	});
 } );
