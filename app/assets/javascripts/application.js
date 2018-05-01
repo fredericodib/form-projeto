@@ -25,10 +25,17 @@ $( ".audio-boxes2" ).height(w);
 $( ".audio-boxes3" ).height(w);
 $( ".audio-boxes4" ).height(w);
 
-function playSound (id) {
-    document.getElementById(id).play();
+function stopAllAudios() {
+	$('audio').each(function(){
+	    this.pause(); // Stop playing
+	    this.currentTime = 0; // Reset time
+	}); 
 }
 
+function playSound (id) {
+	stopAllAudios();
+    document.getElementById(id).play();
+}
 
 
 function change(target) {
@@ -47,3 +54,24 @@ $( function() {
 	  	stop: function( event, ui ) {change(event.target)}
 	});
 } );
+
+function play(list, i) {
+	list[i].onended = function() {
+		if (i < 3) {
+			list[i+1].play()
+			play(list, i+1)
+		}
+	};
+}
+
+$(".playlist").click((e) => {
+	stopAllAudios();
+	var list = $(e.currentTarget).closest("div").children("div").children().children().children("audio")
+	
+	list[0].play();
+	list[0].onended = function() {
+		list[1].play();
+    	play(list, 1);
+	};
+
+});

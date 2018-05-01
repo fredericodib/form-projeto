@@ -64,10 +64,13 @@
 
 
     <!-- Lembrete IE não suporta arquivos.wav -->
-
-    
     <div class="question-text">
-        <p>1) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
+        <p>The following fragments display six different music phrases in a non ordered sequence. Please, rearrange each one of these in a order that makes sense to you. There's no right or wrong answer, follow your intuition. You should drag to organize the fragments.</p>
+
+        <p>Os seguintes fragmentos exibem seis distintas frases musicais em uma sequência não ordenada. Por favor, reorganize cada uma destas em uma ordem que faça sentido para você. Não há resposta certa ou errada, siga sua intuição. Você deve arrastar para ordenar os fragmentos.</p>
+    </div>
+    <div class="question-text">
+        <p>1) <%= "Ordene (arrastando com o mouse) os seguintes fragmentos musicais em uma ordem que faça sentido. | Arrange by dragging the following music fragments in an order that makes sense to you." %></p>
         <div class="audio-box sortable" data-target="q1">
             <div class="audio-boxes" data-value="1">
                 <div class="audio-boxes1">
@@ -76,17 +79,17 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
-            <div class="audio-boxes" data-value="2">
-                <div class="audio-boxes3">
-                    <%= audio_tag "/assets/1Heitorb.wav", id: "play2" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play2')" %>
-                </div>
-                <div class="move btn">Move</div>
-            </div>
             <div class="audio-boxes"  data-value="3">
                 <div class="audio-boxes2 ">
                     <%= audio_tag "/assets/1Heitorc.wav", id: "play3" %>
                     <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play3')" %>
+                </div>
+                <div class="move btn">Move</div>
+            </div>
+            <div class="audio-boxes" data-value="2">
+                <div class="audio-boxes3">
+                    <%= audio_tag "/assets/1Heitorb.wav", id: "play2" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play2')" %>
                 </div>
                 <div class="move btn">Move</div>
             </div>
@@ -98,20 +101,14 @@
                 <div class="move btn">Move</div>
             </div>
         </div>
+        <button type="button" class="btn btn-success playlist">Play in order</button>
     </div>
 
 
 
     <div class="question-text">
-        <p>2) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>    
+        <p>2) <%= "Ordene (arrastando com o mouse) os seguintes fragmentos musicais em uma ordem que faça sentido. | Arrange by dragging the following music fragments in an order that makes sense to you." %></p>    
         <div class="audio-box sortable" data-target="q2">
-            <div class="audio-boxes" data-value="1">
-                <div class="audio-boxes2">
-                    <%= audio_tag "/assets/2Seincmana.wav", id: "play5" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play5')" %>
-                </div>
-                <div class="move btn">Move</div>
-            </div>
             <div class="audio-boxes" data-value="2">
                 <div class="audio-boxes3">
                     <%= audio_tag "/assets/2Seincmanb.wav", id: "play6" %>
@@ -119,10 +116,10 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
-            <div class="audio-boxes" data-value="3">
-                <div class="audio-boxes4">
-                    <%= audio_tag "/assets/2Seincmanc.wav", id: "play7" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play7')" %>
+            <div class="audio-boxes" data-value="1">
+                <div class="audio-boxes2">
+                    <%= audio_tag "/assets/2Seincmana.wav", id: "play5" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play5')" %>
                 </div>
                 <div class="move btn">Move</div>
             </div>
@@ -133,18 +130,26 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
+            <div class="audio-boxes" data-value="3">
+                <div class="audio-boxes4">
+                    <%= audio_tag "/assets/2Seincmanc.wav", id: "play7" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play7')" %>
+                </div>
+                <div class="move btn">Move</div>
+            </div>
         </div>
+        <button type="button" class="btn btn-success playlist">Play in order</button>
     </div>
 
 
 
     <div class="question-text">
-        <p>3) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
+        <p>3) <%= "Ordene (arrastando com o mouse) os seguintes fragmentos musicais em uma ordem que faça sentido. | Arrange by dragging the following music fragments in an order that makes sense to you." %></p>
         <div class="audio-box sortable" data-target="q3">
-            <div class="audio-boxes" data-value="1">
-                <div class="audio-boxes4">
-                    <%= audio_tag "/assets/3Victórioa.wav", id: "play9" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play9')" %>
+            <div class="audio-boxes" data-value="4">
+                <div class="audio-boxes2">
+                    <%= audio_tag "/assets/3Victóriod.wav", id: "play12" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play12')" %>
                 </div>
                 <div class="move btn">Move</div>
             </div>
@@ -155,6 +160,13 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
+            <div class="audio-boxes" data-value="1">
+                <div class="audio-boxes4">
+                    <%= audio_tag "/assets/3Victórioa.wav", id: "play9" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play9')" %>
+                </div>
+                <div class="move btn">Move</div>
+            </div>
             <div class="audio-boxes" data-value="3">
                 <div class="audio-boxes1">
                     <%= audio_tag "/assets/3Victórioc.wav", id: "play11" %>
@@ -162,25 +174,19 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
-            <div class="audio-boxes" data-value="4">
-                <div class="audio-boxes2">
-                    <%= audio_tag "/assets/3Victóriod.wav", id: "play12" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play12')" %>
-                </div>
-                <div class="move btn">Move</div>
-            </div>
         </div> 
+        <button type="button" class="btn btn-success playlist">Play in order</button>
     </div>
 
 
 
     <div class="question-text">
-        <p>4) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
+        <p>4) <%= "Ordene (arrastando com o mouse) os seguintes fragmentos musicais em uma ordem que faça sentido. | Arrange by dragging the following music fragments in an order that makes sense to you." %></p>
         <div class="audio-box sortable" data-target="q4">
-            <div class="audio-boxes" data-value="1">
-                <div class="audio-boxes2">
-                    <%= audio_tag "/assets/4 Csekö a.wav", id: "play13" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play13')" %>
+             <div class="audio-boxes" data-value="3">
+                <div class="audio-boxes1">
+                    <%= audio_tag "/assets/4 Csekö c.wav", id: "play15" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play15')" %>
                 </div>
                 <div class="move btn">Move</div>
             </div>
@@ -191,10 +197,10 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
-            <div class="audio-boxes" data-value="3">
-                <div class="audio-boxes1">
-                    <%= audio_tag "/assets/4 Csekö c.wav", id: "play15" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play15')" %>
+           <div class="audio-boxes" data-value="1">
+                <div class="audio-boxes2">
+                    <%= audio_tag "/assets/4 Csekö a.wav", id: "play13" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play13')" %>
                 </div>
                 <div class="move btn">Move</div>
             </div>
@@ -206,17 +212,25 @@
                 <div class="move btn">Move</div>
             </div>
         </div>
+        <button type="button" class="btn btn-success playlist">Play in order</button>
     </div>
 
 
 
     <div class="question-text">
-        <p>5) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
+        <p>5) <%= "Ordene (arrastando com o mouse) os seguintes fragmentos musicais em uma ordem que faça sentido. | Arrange by dragging the following music fragments in an order that makes sense to you." %></p>
         <div class="audio-box sortable" data-target="q5">
-            <div class="audio-boxes" data-value="1">
-                <div class="audio-boxes2">
-                    <%= audio_tag "/assets/5 Zampronha a.wav", id: "play17" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play17')" %>
+            <div class="audio-boxes" data-value="4">
+                <div class="audio-boxes3">
+                    <%= audio_tag "/assets/5 Zampronha d.wav", id: "play20" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play20')" %>
+                </div>  
+                <div class="move btn">Move</div>
+            </div>
+            <div class="audio-boxes" data-value="3">
+                <div class="audio-boxes4">
+                    <%= audio_tag "/assets/5 Zampronha c.wav", id: "play19" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)" , :onclick => "playSound('play19')"%>
                 </div>
                 <div class="move btn">Move</div>
             </div>
@@ -227,28 +241,36 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
-            <div class="audio-boxes" data-value="3">
-                <div class="audio-boxes4">
-                    <%= audio_tag "/assets/5 Zampronha c.wav", id: "play19" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)" , :onclick => "playSound('play19')"%>
+            <div class="audio-boxes" data-value="1">
+                <div class="audio-boxes2">
+                    <%= audio_tag "/assets/5 Zampronha a.wav", id: "play17" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play17')" %>
                 </div>
                 <div class="move btn">Move</div>
             </div>
-            <div class="audio-boxes" data-value="4">
-                <div class="audio-boxes3">
-                    <%= audio_tag "/assets/5 Zampronha d.wav", id: "play20" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play20')" %>
-                </div>  
-                <div class="move btn">Move</div>
-            </div>
-        </div>    
+        </div> 
+        <button type="button" class="btn btn-success playlist">Play in order</button>   
     </div>
 
 
 
     <div class="question-text">
-        <p>6) <%= "ordene os fragmentos abaixo como desejar | sort the audio frags below as you wish." %></p>
+        <p>6) <%= "Ordene (arrastando com o mouse) os seguintes fragmentos musicais em uma ordem que faça sentido. | Arrange by dragging the following music fragments in an order that makes sense to you." %></p>
         <div class="audio-box sortable" data-target="q6">
+            <div class="audio-boxes" data-value="4">
+                <div class="audio-boxes1">
+                    <%= audio_tag "/assets/6 Ferraz d.wav", id: "play24" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play22')" %>
+                </div>
+                <div class="move btn">Move</div>
+            </div>
+            <div class="audio-boxes" data-value="3">
+                <div class="audio-boxes2">
+                    <%= audio_tag "/assets/6 Ferraz c.wav", id: "play23" %>
+                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play21')" %>
+                </div>
+                <div class="move btn">Move</div>
+            </div>
             <div class="audio-boxes" data-value="1">
                 <div class="audio-boxes4">
                     <%= audio_tag "/assets/6 Ferraz a.wav", id: "play21" %>
@@ -263,29 +285,16 @@
                 </div>
                 <div class="move btn">Move</div>
             </div>
-            <div class="audio-boxes" data-value="3">
-                <div class="audio-boxes2">
-                    <%= audio_tag "/assets/6 Ferraz c.wav", id: "play23" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play21')" %>
-                </div>
-                <div class="move btn">Move</div>
-            </div>
-            <div class="audio-boxes" data-value="4">
-                <div class="audio-boxes1">
-                    <%= audio_tag "/assets/6 Ferraz d.wav", id: "play24" %>
-                    <%= link_to image_tag("audio.png"), "javascript:void(0)", :onclick => "playSound('play22')" %>
-                </div>
-                <div class="move btn">Move</div>
-            </div>
         </div>
+        <button type="button" class="btn btn-success playlist">Play in order</button>
     </div>
 
-    <%= f.hidden_field(:q1, value: "1 2 3 4", id: "q1") %>
-    <%= f.hidden_field(:q2, value: "1 2 3 4", id: "q2") %>
-    <%= f.hidden_field(:q3, value: "1 2 3 4", id: "q3") %>
-    <%= f.hidden_field(:q4, value: "1 2 3 4", id: "q4") %>
-    <%= f.hidden_field(:q5, value: "1 2 3 4", id: "q5") %>
-    <%= f.hidden_field(:q6, value: "1 2 3 4", id: "q6") %>
+    <%= f.hidden_field(:q1, value: "1 3 2 4", id: "q1") %>
+    <%= f.hidden_field(:q2, value: "2 1 4 3", id: "q2") %>
+    <%= f.hidden_field(:q3, value: "4 2 1 3", id: "q3") %>
+    <%= f.hidden_field(:q4, value: "3 2 1 4", id: "q4") %>
+    <%= f.hidden_field(:q5, value: "4 3 2 1", id: "q5") %>
+    <%= f.hidden_field(:q6, value: "4 3 1 2", id: "q6") %>
     <%= f.submit("enviar | submit", :id => 'submit-buttom', :class => "btn btn-primary btn-lg btn-block") %>
     <br>
     </div>
