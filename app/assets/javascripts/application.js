@@ -19,6 +19,7 @@
 //= require jquery-ui/widgets/mouse
 //= require touchpunch
 
+
 w = $( ".audio-boxes1" ).width();
 $( ".audio-boxes1" ).height(w);
 $( ".audio-boxes2" ).height(w);
