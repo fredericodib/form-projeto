@@ -24,7 +24,7 @@ w = $( ".audio-boxes1" ).width();
 $( ".audio-boxes1" ).height(w);
 $( ".audio-boxes2" ).height(w);
 $( ".audio-boxes3" ).height(w);
-$( ".audio-boxes4" ).height(w);
+$( ".audio-boxes4" ).height(w); 
 
 function stopAllAudios() {
 	$('audio').each(function(){
